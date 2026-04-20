@@ -6,8 +6,48 @@ import {
   Linkedin,
   Download,
 } from "lucide-react";
-import img from "../assets/Author d.jpg"
+import { IoLogoWhatsapp } from "react-icons/io";
+import Swal from 'sweetalert2';
+import img from "../assets/Author d.jpg";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+
+
+  const handleDownload = () => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "Do you want to download my CV?",
+      icon: 'question',
+      iconColor: '#0ea5e9', 
+      background: '#111827', 
+      color: '#ffffff',      
+      showCancelButton: true,
+      confirmButtonColor: '#10b981', 
+      cancelButtonColor: '#374151',  
+      confirmButtonText: 'Yes, download it!',
+      cancelButtonText: 'Cancel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const link = document.createElement('a');
+        link.href = '/Ahmed Metwalli(CV).pdf'; 
+        link.download = 'Ahmed Metwalli(CV).pdf'; 
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'Download started.',
+          icon: 'success',
+          iconColor: '#10b981',
+          background: '#111827',
+          color: '#ffffff',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    });
+  };
+
 
 const skills = [
   "React.js",
@@ -25,10 +65,18 @@ const skills = [
   "GitHub Actions",
 ];
 
+const dots = [...Array(30)].map(() => ({
+  left: Math.random() * 100,
+  top: Math.random() * 100,
+  duration: 15 + Math.random() * 20,
+  delay: Math.random() * 5,
+}));
+
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Bg */}
+    
+    <section id="hero" 
+    className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
@@ -40,18 +88,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
+        {dots.map((dot, i) => (
           <div
             key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: `${dot.left}%`,
+              top: `${dot.top}%`,
+              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
+              animationDelay: `${dot.delay}s`,
             }}
           />
         ))}
@@ -72,29 +118,36 @@ export const Hero = () => {
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl  font-bold leading-tight animate-fade-in animation-delay-100">
-                Front-end  <span className="text-primary glow-text">Developer</span>
+                Front-end{" "}
+                <span className="text-primary glow-text">Developer</span>
                 <br />
-                Crafting modern 
+                Crafting modern
                 <br />
                 <span className="font-serif italic font-normal text-white">
                   web applications.
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Ahmed Metwalli — A Front-end Developer using
-                React, JavaScript, Tailwind, and Bootstrap. I build high-performance and responsive websites.
+                Hi, I'm Ahmed Metwalli — A Front-end Developer using React,
+                JavaScript, Tailwind, and Bootstrap. I build high-performance
+                and responsive websites.
               </p>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
+              <a href="tel:+2001062577985">
+                <Button size="lg">
+                  Contact Me <ArrowRight className="w-5 h-5" />
+                </Button>
+              </a>
+              <div onClick={handleDownload}>
               <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
+                <Download
+                  className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
+              </div>
             </div>
 
             {/* Social Links */}
@@ -102,8 +155,14 @@ export const Hero = () => {
               <span className="text-sm text-muted-foreground">Follow me: </span>
               {[
                 { icon: Github, href: "https://github.com/Ahmed-Metwalli-hub" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/ahmed-metwalli-5195252b8/" },
-                
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/ahmed-metwalli-5195252b8/",
+                },
+                {
+                  icon:  IoLogoWhatsapp  ,
+                  href: "https://wa.me/201062577985",
+                },
               ].map((social, idx) => (
                 <a
                   key={idx}
@@ -115,6 +174,7 @@ export const Hero = () => {
                 </a>
               ))}
             </div>
+              
           </div>
           {/* Right Column - Profile Image */}
           <div className="relatice animate-fade-in animation-delay-300">
@@ -143,10 +203,10 @@ export const Hero = () => {
                   </div>
                 </div>
                 {/* Stats Badge */}
-                <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">1+</div>
+                <div className="absolute flex flex-col items-center justify-center -top-4 -left-4 glass rounded-xl px-3 py-2 animate-float animation-delay-500">
+                  <div className="text-1xl font-bold text-primary">A M</div>
                   <div className="text-xs text-muted-foreground">
-                    Years Exp.
+                    Front End
                   </div>
                 </div>
               </div>

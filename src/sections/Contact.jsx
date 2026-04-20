@@ -15,7 +15,7 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     value: "ahmedmetwalli07@gmail.com",
-    href: "ahmedmetwalli07@gmail.com",
+    href: "mailto:ahmedmetwalli07@gmail.com",
   },
   {
     icon: Phone,
@@ -76,11 +76,11 @@ export const Contact = () => {
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
-      console.error("EmailJS error:", error);
+      console.error("EmailJS error:", err);
       setSubmitStatus({
         type: "error",
         message:
-          error.text || "Failed to send message. Please try again later.",
+          err.text || "Failed to send message. Please try again later.",
       });
     } finally {
       setIsLoading(false);
@@ -218,6 +218,11 @@ export const Contact = () => {
                 {contactInfo.map((item, i) => (
                   <a
                     key={i}
+                    target={item.label == "Location"?
+                      " _blank"  
+                      :
+                      ""
+                    }
                     href={item.href}
                     className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
                   >
