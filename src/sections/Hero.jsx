@@ -28,8 +28,8 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
     }).then((result) => {
       if (result.isConfirmed) {
         const link = document.createElement('a');
-        link.href = '/Ahmed Metwalli(CV).pdf'; 
-        link.download = 'Ahmed Metwalli(CV).pdf'; 
+        link.href = '/Ahmed Metwalli_(CV).pdf'; 
+        link.download = 'Ahmed Metwalli_(CV).pdf'; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -51,16 +51,24 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
 const skills = [
   "React.js",
-  "Hooks",
+  "TypeScript",
+  "Redux Toolkit",
+  "JavaScript (ES6+)",
+  "ٌReact Router",
+  "TanStack Query (React Query)",
+  "RTK Query"
+  ,"Zustand",
+  " REST APIs (Axios, Fetch)",
   "Context API",
-  "JavaScript",
+  "Hooks",
+  "Lazy Loading",
+  "Skeleton Loading",
   "HTML5",
   "CSS3",
-  "Bootstrap",
-  "Responsive Design",
   "Tailwind CSS",
-  "REST APIs",
-  "Fetch / Axios",
+  "Bootstrap",
+  "Material UI",
+  "Responsive Design",
   "Git",
   "GitHub Actions",
 ];
@@ -121,10 +129,12 @@ export const Hero = () => {
                 Front-end{" "}
                 <span className="text-primary glow-text">Developer</span>
                 <br />
-                Crafting modern
+                 Building Modern,
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  web applications.
+                  
+                 High-Performance Web Apps
+                 
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
@@ -206,7 +216,7 @@ export const Hero = () => {
                 <div className="absolute flex flex-col items-center justify-center -top-4 -left-4 glass rounded-xl px-3 py-2 animate-float animation-delay-500">
                   <div className="text-1xl font-bold text-primary">A M</div>
                   <div className="text-xs text-muted-foreground">
-                    Front End
+                    Front-end
                   </div>
                 </div>
               </div>

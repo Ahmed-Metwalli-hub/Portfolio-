@@ -240,7 +240,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Availability Card */}
+            
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
