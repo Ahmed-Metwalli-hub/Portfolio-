@@ -7,47 +7,45 @@ import {
   Download,
 } from "lucide-react";
 import { IoLogoWhatsapp } from "react-icons/io";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import img from "../assets/Author d.jpg";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 
+const handleDownload = () => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "Do you want to download my CV?",
+    icon: "question",
+    iconColor: "#0ea5e9",
+    background: "#111827",
+    color: "#ffffff",
+    showCancelButton: true,
+    confirmButtonColor: "#10b981",
+    cancelButtonColor: "#374151",
+    confirmButtonText: "Yes, download it!",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const link = document.createElement("a");
+      link.href = "/Ahmed-Metwalli-Frontend-Developer (CV).pdf";
+      link.download = "Ahmed-Metwalli-Frontend-Developer (CV).pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-  const handleDownload = () => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "Do you want to download my CV?",
-      icon: 'question',
-      iconColor: '#0ea5e9', 
-      background: '#111827', 
-      color: '#ffffff',      
-      showCancelButton: true,
-      confirmButtonColor: '#10b981', 
-      cancelButtonColor: '#374151',  
-      confirmButtonText: 'Yes, download it!',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const link = document.createElement('a');
-        link.href = '/Ahmed-Metwalli-Frontend-Developer(CV).pdf'; 
-        link.download = 'Ahmed-Metwalli-Frontend-Developer(CV).pdf'; 
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-        Swal.fire({
-          title: 'Success!',
-          text: 'Download started.',
-          icon: 'success',
-          iconColor: '#10b981',
-          background: '#111827',
-          color: '#ffffff',
-          showConfirmButton: false,
-          timer: 1500
-        });
-      }
-    });
-  };
-
+      Swal.fire({
+        title: "Success!",
+        text: "Download started.",
+        icon: "success",
+        iconColor: "#10b981",
+        background: "#111827",
+        color: "#ffffff",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  });
+};
 
 const skills = [
   "React.js",
@@ -56,8 +54,8 @@ const skills = [
   "JavaScript (ES6+)",
   "ٌReact Router",
   "TanStack Query (React Query)",
-  "RTK Query"
-  ,"Zustand",
+  "RTK Query",
+  "Zustand",
   " REST APIs (Axios, Fetch)",
   "Context API",
   "Hooks",
@@ -82,9 +80,10 @@ const dots = [...Array(30)].map(() => ({
 
 export const Hero = () => {
   return (
-    
-    <section id="hero" 
-    className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
@@ -129,12 +128,10 @@ export const Hero = () => {
                 Front-end{" "}
                 <span className="text-primary glow-text">Developer</span>
                 <br />
-                 Building Modern,
+                Building Modern,
                 <br />
                 <span className="font-serif italic font-normal text-white">
-                  
-                 High-Performance Web Apps
-                 
+                  High-Performance Web Apps
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
@@ -152,11 +149,10 @@ export const Hero = () => {
                 </Button>
               </a>
               <div onClick={handleDownload}>
-              <AnimatedBorderButton>
-                <Download
-                  className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
               </div>
             </div>
 
@@ -170,7 +166,7 @@ export const Hero = () => {
                   href: "https://www.linkedin.com/in/ahmed-metwalli-5195252b8/",
                 },
                 {
-                  icon:  IoLogoWhatsapp  ,
+                  icon: IoLogoWhatsapp,
                   href: "https://wa.me/201062577985",
                 },
               ].map((social, idx) => (
@@ -184,7 +180,6 @@ export const Hero = () => {
                 </a>
               ))}
             </div>
-              
           </div>
           {/* Right Column - Profile Image */}
           <div className="relatice animate-fade-in animation-delay-300">
@@ -215,9 +210,7 @@ export const Hero = () => {
                 {/* Stats Badge */}
                 <div className="absolute flex flex-col items-center justify-center -top-4 -left-4 glass rounded-xl px-3 py-2 animate-float animation-delay-500">
                   <div className="text-1xl font-bold text-primary">A M</div>
-                  <div className="text-xs text-muted-foreground">
-                    Front-end
-                  </div>
+                  <div className="text-xs text-muted-foreground">Front-end</div>
                 </div>
               </div>
             </div>
