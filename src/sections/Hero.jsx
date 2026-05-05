@@ -27,8 +27,8 @@ const handleDownload = () => {
   }).then((result) => {
     if (result.isConfirmed) {
       const link = document.createElement("a");
-      link.href = "/Ahmed-Metwalli-Frontend-Developer (CV).pdf";
-      link.download = "Ahmed-Metwalli-Frontend-Developer (CV).pdf";
+      link.href = "/Ahmed-Metwalli-Frontend-Developer(CV).pdf";
+      link.download = "Ahmed-Metwalli-Frontend-Developer(CV).pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
