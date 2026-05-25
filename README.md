@@ -8,7 +8,7 @@ A modern portfolio built with React.js to showcase projects and skills.
 - Clean UI
 
 ## Tech Stack
-React.js, CSS, JavaScript
+React.js, Tailwind CSS, JavaScript
 
 ## Live Demo
 https://portfolio-alpha-seven-47.vercel.app
