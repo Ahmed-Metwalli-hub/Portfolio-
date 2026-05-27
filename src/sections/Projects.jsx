@@ -1,16 +1,16 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import img1 from "../assets/DarkLook.png"
-import img2 from "../assets/DYAT.png"
-import img3 from "../assets/Logo.png"
-import img4 from "../assets/react-dashboard.png"
+import img1 from "../assets/DarkLook.png";
+import img2 from "../assets/DYAT.png";
+import img3 from "../assets/Logo.png";
+import img4 from "../assets/react-dashboard.png";
 const projects = [
   {
     title: "DarkLook",
     description:
       "Developed a scalable e-commerce application using React.js with dynamic routing, cart management, and REST API integration, Improved performance using lazy loading, reducing load time by ~30% and integrated Swiper.js for interactive UI components and focused on delivering a clean, user-friendly UI.",
     image: img1,
-    tags: ["React","JavaScript", "Bootstrap", "Context API"],
+    tags: ["React", "JavaScript", "Bootstrap", "Context API"],
 
     link: "https://dark-look-fawn.vercel.app/",
     github: "https://github.com/Ahmed-Metwalli-hub/DarkLook",
@@ -21,22 +21,21 @@ const projects = [
       "Built a production-ready React Dashboard using React.js, Redux Toolkit, Tailwind CSS, and DaisyUI. The project implements scalable frontend architecture with authentication handling, protected routing, global state management, and reusable components. It follows modern UI/UX principles and is optimized for performance, responsiveness, and maintainability.",
     image: img4,
     tags: ["React.js", "Redux Toolkit", "Tailwind CSS", "DaisyUI"],
-    link: "https://dashboard-blush-one-73.vercel.app/",
-    github: "https://github.com/Ahmed-Metwalli-hub/Dashboard",
+    link: "https://react-dashboard-ten.vercel.app/",
+    github: "https://github.com/Ahmed-Metwalli-hub/react-dashboard",
   },
   {
     title: "DYAT Project",
-    description: "A modern gaming platform delivering an interactive and immersive user experience."
-    ,
+    description:
+      "A modern gaming platform delivering an interactive and immersive user experience.",
     image: img2,
-    tags: [ "CSS", "HTML"],
+    tags: ["CSS", "HTML"],
     link: "https://dyat-proj.vercel.app/",
     github: "https://github.com/Ahmed-Metwalli-hub/DYAT-PROJ",
   },
   {
     title: "Landing Page",
-    description:
-      "A simple and clean landing page with a modern design.",
+    description: "A simple and clean landing page with a modern design.",
     image: img3,
     tags: ["React", "JavaScript", "Bootstrap"],
     link: "https://landing-page-geti.vercel.app/",
@@ -57,7 +56,7 @@ export const Projects = () => {
             Featured Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Projects 
+            Projects
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
             A selection of my recent work.
