@@ -3,12 +3,12 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import img1 from "../assets/DarkLook.png"
 import img2 from "../assets/DYAT.png"
 import img3 from "../assets/Logo.png"
-import img4 from "../assets/Dashbord.png"
+import img4 from "../assets/react-dashboard.png"
 const projects = [
   {
     title: "DarkLook",
     description:
-      "A full-featured e-commerce website for showcasing and selling stylish watches.",
+      "Developed a scalable e-commerce application using React.js with dynamic routing, cart management, and REST API integration, Improved performance using lazy loading, reducing load time by ~30% and integrated Swiper.js for interactive UI components and focused on delivering a clean, user-friendly UI.",
     image: img1,
     tags: ["React","JavaScript", "Bootstrap", "Context API"],
 
@@ -16,9 +16,18 @@ const projects = [
     github: "https://github.com/Ahmed-Metwalli-hub/DarkLook",
   },
   {
+    title: "React-Dashbord",
+    description:
+      "Built a production-ready React Dashboard using React.js, Redux Toolkit, Tailwind CSS, and DaisyUI. The project implements scalable frontend architecture with authentication handling, protected routing, global state management, and reusable components. It follows modern UI/UX principles and is optimized for performance, responsiveness, and maintainability.",
+    image: img4,
+    tags: ["React.js", "Redux Toolkit", "Tailwind CSS", "DaisyUI"],
+    link: "https://dashboard-blush-one-73.vercel.app/",
+    github: "https://github.com/Ahmed-Metwalli-hub/Dashboard",
+  },
+  {
     title: "DYAT Project",
     description: "A modern gaming platform delivering an interactive and immersive user experience."
-      ,
+    ,
     image: img2,
     tags: [ "CSS", "HTML"],
     link: "https://dyat-proj.vercel.app/",
@@ -32,15 +41,6 @@ const projects = [
     tags: ["React", "JavaScript", "Bootstrap"],
     link: "https://landing-page-geti.vercel.app/",
     github: "https://github.com/Ahmed-Metwalli-hub/LandingPage",
-  },
-  {
-    title: "Dashbord",
-    description:
-      "A dashboard interface for managing and visualizing data.",
-    image: img4,
-    tags: ["JavaScript","Bootstrap", "HTML"],
-    link: "https://dashboard-blush-one-73.vercel.app/",
-    github: "https://github.com/Ahmed-Metwalli-hub/Dashboard",
   },
 ];
 
